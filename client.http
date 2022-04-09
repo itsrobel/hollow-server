@@ -1,0 +1,13 @@
+
+# POST http://localhost:3000/user/
+# Content-Type: application/json
+
+# {
+#         "username": "Robel",
+#         "email": "itsrobel.schwarz@gmail.com",
+#         "password": "123456",
+#         "confirmPassword": "123456"
+
+# }
+
+GET http://localhost:3000/user/list

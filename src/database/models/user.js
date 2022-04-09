@@ -1,10 +1,9 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-const bcrypt = require("bcryptjs");
-mongoose.promise = Promise;
+const mongoose    = require("mongoose");
+const bcrypt      = require("bcryptjs");
+mongoose.promise  = Promise;
 
 // Define userSchema
-const userSchema = new Schema({
+const userSchema  = new mongoose.Schema({
   username: { type: String, unique: false, required: true },
   email: { type: String, unique: true, required: true },
   password: { type: String, unique: false, required: true },
