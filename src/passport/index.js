@@ -6,9 +6,10 @@ module.exports = (passport) => {
   passport.use(
     // defines localstrategy used in the post request routes
     new LocalStrategy(
-      { usernameField: "username" },
-      (username, password, done) => {
-        User.findOne({ username }) // finds the email on login post request
+      { usernameField: "email" , password: "password" }, // maps the username field to email request
+      (username, password, done) => {                   // cuz  passport is dumb and forces us to use username idk
+        console.log(username, password)
+        User.findOne({ email:username }) // finds the email on login post request
           .then((user) => {
             if (!user) {
               return done(null, false, { message: "user does not exist" });
